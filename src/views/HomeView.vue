@@ -1,22 +1,22 @@
 <template>
   <div class="home">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
     </div>
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="Vue logo" src="../assets/logo.png"> -->
+    <LoginPage msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import LoginPage from '@/components/LoginPage.vue'
 
 export default {
-  name: 'HomeView',
+  name: 'LoginPage',
   components: {
-    HelloWorld
+    LoginPage
   }
 }
 </script>

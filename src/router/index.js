@@ -5,6 +5,7 @@ import LoginPage from "../components/LoginPage.vue"
 import DashBoardPage from "../views/DashBoardPage.vue"
 import OrderFeeds from "../views/OrderFeeds.vue"
 import SubmitPig from "../views/SubmitPig.vue"
+import OrderReceivedPage from "../views/OrderReceivedPage.vue"
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/batch',
     name: 'batch',
     component: SubmitPig
+  },
+  {
+    path: '/received',
+    name: 'received',
+    component: OrderReceivedPage
   },
   {
     path: '/about',

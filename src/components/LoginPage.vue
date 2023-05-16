@@ -3,6 +3,7 @@
     <div class="row justify-content-center">
       <div class="col-lg-4">
         <div class="login-panel bg-white text-left">
+          <img class="cover-logo d-flex justify-content-center" src="../assets/image.png" alt="cover"/>
           <div class="alert alert-primary" role="alert" :style="{opacity: isAlertShow ? 1 : 0}">
             Login successfully. <small>Waiting for redirect.</small>
             <loading-component width="30"></loading-component>
@@ -98,6 +99,10 @@ export default {
     font-weight: 400;
     font-size: 14px;
     font-family: "Roboto", sans-serif;
+  }
+
+  .cover-logo {
+    max-width: 100%;
   }
 
   .logo-image {

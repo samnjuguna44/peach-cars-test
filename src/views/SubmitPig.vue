@@ -127,7 +127,7 @@ export default {
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
-  width: 100%;
+  width: 50%;
   height: 10px;
   border-radius: 5px;
   background: #f5f5f5;

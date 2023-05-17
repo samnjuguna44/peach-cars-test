@@ -27,7 +27,11 @@
               <h3 class="fs-1 feed-number">2</h3>
               <div>
                 <p class="county-title">| KIAMBU COUNTY</p>
-                <button class="feed-button btn rounded-pill" @click.prevent="feeding" v-if="!isLogging">
+                <button
+                  class="feed-button btn rounded-pill"
+                  @click.prevent="feeding"
+                  v-if="!isLogging"
+                >
                   Order Feeds
                 </button>
               </div>
@@ -41,7 +45,11 @@
               <h3 class="fs-1 pig-number">36</h3>
               <div>
                 <p class="county-title">| LARGE WHITE</p>
-                <button class="sell-button btn rounded-pill" @click.prevent="selling" v-if="!isLogging">
+                <button
+                  class="sell-button btn rounded-pill"
+                  @click.prevent="selling"
+                  v-if="!isLogging"
+                >
                   Sell a Batch
                 </button>
               </div>
@@ -54,7 +62,26 @@
     <br />
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="card">
+            <img
+              src="../assets/blueberry-cheesecakes.jpg"
+              class="card-img-top"
+              alt="cheesecake"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Mini-Blueberry Cheesecake</h5>
+              <p class="card-text">Juicy Blueberries.</p>
+              <a href="#" class="btn btn-primary rounded-pill food-button"
+                >Blueberry</a
+              >
+              <a href="#" class="btn btn-secondary rounded-pill food-button-i"
+                >Cheesecake</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
           <div class="card">
             <img
               src="../assets/wonton-soup.jpg"
@@ -62,32 +89,55 @@
               alt="wonton"
             />
             <div class="card-body">
-              <h5 class="card-title">Wonton - Soup</h5>
-              <p class="card-text">(20 minute version)</p>
-              <button class="btn rounded-pill food-button">Wonton</button>
-              <button class="btn rounded-pill food-button-i">Bok Choy Soup</button>
+              <h5 class="card-title">Wonton Soup</h5>
+              <p class="card-text">(20 minute version).</p>
+              <a href="#" class="btn rounded-pill food-button">Soup</a>
+              <a href="#" class="btn rounded-pill food-button-i">Wonton</a>
             </div>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-md-6 col-lg-4">
           <div class="card">
-            <img src="../assets/chocolate-chip.jpg" class="card-img-top" alt="chocolate" />
+            <img
+              src="../assets/chocolate-chip.jpg"
+              class="card-img-top"
+              alt="muffins"
+            />
             <div class="card-body">
-              <h5 class="card-title">Chocolate Chip Muffin</h5>
-              <p class="card-text">Chocolaty Bliss</p>
-              <button class="btn btn rounded-pill food-button">Banana</button>
-              <button class="btn btn rounded-pill food-button-i">Chocolate</button>
+              <h5 class="card-title">Chocolate Chip Muffins</h5>
+              <p class="card-text">Banana chocolate chip.</p>
+              <a href="#" class="btn rounded-pill food-button">Muffins</a>
+              <a href="#" class="btn rounded-pill food-button-i">Chocolate</a>
             </div>
           </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-md-6 col-lg-4">
           <div class="card">
-            <img src="../assets/overnight-casserole.jpg" class="card-img-top" alt="Image 2" />
+            <img
+              src="../assets/overnight-casserole.jpg"
+              class="card-img-top"
+              alt="casserole"
+            />
             <div class="card-body">
               <h5 class="card-title">Overnight Casserole</h5>
-              <p class="card-text">Casserole</p>
-              <button class="btn rounded-pill food-button">Casserole</button>
-              <button class="btn rounded-pill food-button-i">Breakfast</button>
+              <p class="card-text">Breakfast casserole.</p>
+              <a href="#" class="btn rounded-pill food-button">Casserole</a>
+              <a href="#" class="btn rounded-pill food-button-i">Breakfast</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card">
+            <img
+              src="../assets/blueberry-margarita.jpg"
+              class="card-img-top"
+              alt="margarita"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Blueberry Margarita</h5>
+              <p class="card-text">Tequila and Lime.</p>
+              <a href="#" class="btn rounded-pill food-button">Margarita</a>
+              <a href="#" class="btn rounded-pill food-button-i">Blueberry</a>
             </div>
           </div>
         </div>
@@ -98,38 +148,38 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       isLogginIn: false,
-    }
+    };
   },
   methods: {
     feeding() {
-      this.isLoggingIn = true
+      this.isLoggingIn = true;
 
       setTimeout(() => {
-           this.isLoggingIn = false
-           setTimeout(() => this.redirect(), 1000)
-      }, 1000)
+        this.isLoggingIn = false;
+        setTimeout(() => this.redirect(), 1000);
+      }, 1000);
     },
 
     redirect() {
-      this.$router.push({ path: '/feeds' })
+      this.$router.push({ path: "/feeds" });
     },
     selling() {
-      this.isLoggingIn = true
+      this.isLoggingIn = true;
 
       setTimeout(() => {
-           this.isLoggingIn = false
-           setTimeout(() => this.redirectTo(), 1000)
-      }, 1000)
+        this.isLoggingIn = false;
+        setTimeout(() => this.redirectTo(), 1000);
+      }, 1000);
     },
 
     redirectTo() {
-      this.$router.push({ path: '/batch' })
+      this.$router.push({ path: "/batch" });
     },
   },
-}
+};
 </script>
 
 <style lang="scss">
@@ -220,50 +270,26 @@ export default {
 }
 
 .card {
-  width: 18rem;
-}
-
-@media (max-width: 767px) {
-  .card {
-    margin-bottom: 1.5rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .card {
-    margin-right: 1.5rem;
-  }
-  .card:last-child {
-    margin-right: 0;
-  }
-}
-
-@media (min-width: 992px) {
-  .card {
-    margin-right: 1.5rem;
-  }
-  .card:nth-child(3n) {
-    margin-right: 0;
-  }
+  margin-bottom: 20px;
 }
 
 .food-button {
-  background: rgba(82, 137, 244, 0.2);
-  border: 1px solid rgba(82, 137, 244, 0.9);
-  border-radius: 50px;
-  color: #6092F5;
+  background: rgba(95, 0, 153, 0.14);
+  border: 1px solid rgba(95, 0, 153, 0.9);
+  border-radius: 40px;
+  color: #6d16a2;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 12px;
 }
 
 .food-button-i {
-  background: rgba(95, 0, 153, 0.14);
-  border: 1px solid rgba(95, 0, 153, 0.9);
+  background: rgba(136, 2, 42, 0.14);
+  border: 1px solid #88022a;
   border-radius: 40px;
-  color: #6D16A2;
+  color: #88022a;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 12px;
   margin-left: 5px;
 }

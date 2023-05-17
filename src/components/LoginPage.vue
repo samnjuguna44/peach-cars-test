@@ -1,13 +1,9 @@
 <template>
-  <section class="container-fluid">
-    <div class="row justify-content-center">
+  <section class="container">
+    <div class="row d-flex justify-content-center">
       <div class="col-lg-4">
         <div class="login-panel bg-white text-left">
           <img class="cover-logo d-flex justify-content-center" src="../assets/image.png" alt="cover"/>
-          <div class="alert alert-primary" role="alert" :style="{opacity: isAlertShow ? 1 : 0}">
-            Login successfully. <small>Waiting for redirect.</small>
-            <loading-component width="30"></loading-component>
-          </div>
           <img
             src="../assets/nairobi-sausages.png"
             class="logo-image"
@@ -38,7 +34,6 @@
             <br />
             <div class="form-group d-flex justify-content-center">
               <button class="btn rounded-pill" @click.prevent="login" v-if="!isLogging">Login</button>
-              <button class="btn rounded-pill" disabled v-if="isLogging"><loading-component width="30"></loading-component></button>
             </div>
           </form>
           <br />
@@ -53,15 +48,12 @@
 </template>
 
 <script>
-import LoadingComponent from '../components/LoadingComponent';
 
 
 export default {
-  components: { LoadingComponent },
   data() {
     return {
        isLogginIn: false,
-       isAlertShow: false
     }
   },
   methods: {
@@ -70,7 +62,6 @@ export default {
 
       setTimeout(() => {
            this.isLoggingIn = false
-           this.isAlertShow = true
            setTimeout(() => this.redirect(), 1000)
       }, 1000)
     },
@@ -89,9 +80,6 @@ export default {
 }
 
 .login-panel {
-  padding: 250px 0;
-  position: relative;
-
   .input-label {
     padding-top: 30px;
     padding-bottom: 8px;
@@ -103,6 +91,7 @@ export default {
 
   .cover-logo {
     max-width: 100%;
+    
   }
 
   .logo-image {
@@ -141,27 +130,6 @@ export default {
     margin-top: 32px;
     height: 48px;
     font-family: "Roboto", sans-serif;
-  }
-
-  .alert {
-    opacity: 0;
-    position: absolute;
-    top: 100px;
-    width: 100%;
-
-    &.alert-primary {
-      background-color: #000000;
-      color: #fff;
-      border: none;
-      font-size: 18px;
-      font-family: "Roboto", sans-serif;
-    }
-    .widget {
-      position: absolute;
-      right: 0;
-      top: 0;
-      margin: 10px;
-    }
   }
 }
 </style>

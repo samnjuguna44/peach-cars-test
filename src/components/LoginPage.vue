@@ -81,7 +81,7 @@ export default {
 
 .login-panel {
   .input-label {
-    padding-top: 30px;
+    padding-top: 25px;
     padding-bottom: 8px;
     color: #1c1b1f;
     font-weight: 400;
